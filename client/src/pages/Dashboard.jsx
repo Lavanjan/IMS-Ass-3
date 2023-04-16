@@ -693,7 +693,7 @@ function Dashboard() {
           </li>
           <li>
             <a
-              href="http://localhost:9000"
+              href="http://ec2-18-215-159-70.compute-1.amazonaws.com:9000"
               class={currentTab === "assign" ? "active" : ""}
               target="_blank"
               rel="noreferrer"

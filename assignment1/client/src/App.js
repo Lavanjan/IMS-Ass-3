@@ -54,7 +54,12 @@ function App() {
   const doSum = (e) => {
     setSum(Number(num1) + Number(num2));
 
-    fetch("http://localhost:9000/" + num1 + "/add/" + num2)
+    fetch(
+      "http://ec2-18-215-159-70.compute-1.amazonaws.com:9000/" +
+        num1 +
+        "/add/" +
+        num2
+    )
       .then((response) => response.text())
       .then((data) => {
         setESum(data);
