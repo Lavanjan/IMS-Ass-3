@@ -1,0 +1,34 @@
+{
+  "name": "inventory-management-server",
+  "version": "1.0.0",
+  "description": "inventory management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "assignment1": "cd ../assignment1/server && npm start",
+    "current-server": "npm run server",
+    "production": "concurrently \"npm run assignment1\" \"npm run current-server\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1333.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "rimraf": "^4.4.0",
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1"
+  }
+}

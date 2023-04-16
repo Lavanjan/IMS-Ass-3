@@ -1,0 +1,67 @@
+version: "4.18.0"
+services:
+  mongodb:
+    image: "mongo"
+    volumes:
+      - data:/data/db
+  nginx:
+    depends_on:
+      - api
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3000:80"
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: "./server"
+    ports:
+      - "8080:8080"
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    depends_on:
+      - mongodb
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    stdin_open: true
+    tty: true
+    depends_on:
+      - api
+  assignment1-server:
+    build:
+      dockerfile: Dockerfile
+      context: ./assignment1/server
+    ports:
+      - "9000:9000"
+    volumes:
+      - /app/node_modules
+      - ./assignment1:/app
+    stdin_open: true
+    tty: true
+    depends_on:
+      - api
+  assignment1-client:
+    build:
+      dockerfile: Dockerfile
+      context: ./assignment1/client
+    ports:
+      - "9001:9001"
+    volumes:
+      - /app/node_modules
+      - ./assignment1:/app
+    stdin_open: true
+    tty: true
+    depends_on:
+      - assignment1-server
+volumes:
+  data:
+  logs:
