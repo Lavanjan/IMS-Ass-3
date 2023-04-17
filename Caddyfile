@@ -1,0 +1,4 @@
+ inventory {
+  reverse_proxy /api/* server:3001
+  reverse_proxy / client:3000
+}

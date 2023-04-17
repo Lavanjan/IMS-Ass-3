@@ -7,6 +7,7 @@ const http = require("http");
 
 const ItemRoute = require("./src/routes/item.js");
 const UserRoute = require("./src/routes/user.js");
+const CalcRoutes = require("./src/routes/calc.js");
 
 const app = express();
 const server = http.createServer(app);
@@ -29,3 +30,4 @@ mongoose
 
 app.use("/item", ItemRoute);
 app.use("/user", UserRoute);
+app.use("/calc", CalcRoutes);

@@ -693,7 +693,7 @@ function Dashboard() {
           </li>
           <li>
             <a
-              href="http://ec2-18-215-159-70.compute-1.amazonaws.com:9000"
+              href="/calc"
               class={currentTab === "assign" ? "active" : ""}
               target="_blank"
               rel="noreferrer"
@@ -701,7 +701,7 @@ function Dashboard() {
               <span class="icon">
                 <i class="fas fa-user"></i>
               </span>
-              <span class="item">Assingment - 1</span>
+              <span class="item">Calculator</span>
             </a>
           </li>
         </ul>

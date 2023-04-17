@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SignIn from "./pages/SignIn";
+import Calculator from "./pages/Calculator";
 
 function App() {
   const token = useSelector((state) => state.authReducer.data);
@@ -16,6 +17,10 @@ function App() {
         <Route
           path="/home"
           element={token ? <Dashboard /> : <Navigate to="../auth" />}
+        />
+        <Route
+          path="/calc"
+          element={token ? <Calculator /> : <Navigate to="../auth" />}
         />
         <Route
           path="/auth"
